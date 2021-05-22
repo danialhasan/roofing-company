@@ -7,7 +7,16 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Inter var"', ...defaultTheme.fontFamily.sans],
+        sans: ['"DM Sans"', ...defaultTheme.fontFamily.sans],
+      },
+      colors: {
+        'soft-white': '#FAFAFA',
+        'soft-black': '#2D3748',
+        'softer-black': '#1A202C',
+        'form-outline': '#41B4E6'
+      },
+      height: {
+        "100v": "100vh",
       },
     },
   },

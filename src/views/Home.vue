@@ -1,34 +1,41 @@
 <script>
-import { defineComponent } from 'vue'
-import ButtonRepo from '@/components/ButtonRepo.vue'
+import { defineComponent } from "vue";
+import ButtonRepo from "@/components/ButtonRepo.vue";
 
 export default defineComponent({
   components: { ButtonRepo },
-})
+  methods: {
+    clicked() {
+      console.log("Hello!");
+    },
+  },
+});
 </script>
-
 <template>
-    <div class="bg-gray-50">
-      <div
-        class="max-w-screen-xl px-4 py-12 mx-auto sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between"
-      >
-        <h2
-          class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10"
-        >
-          Ready to dive in?
-          <br />
-          <span class="text-indigo-600">Vite 2.x + Vue 3.x + Tailwind 2.x</span>
-        </h2>
-        <div class="flex mt-8 lg:flex-shrink-0 lg:mt-0">
-          <div class="inline-flex rounded-md shadow">
-            <router-link
-              to="/about"
-              class="inline-flex items-center justify-center px-5 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none"
-              >Next Page</router-link
-            >
-          </div>
-          <ButtonRepo />
-        </div>
-      </div>
-    </div>
+  <!-- 
+  [] Mobile Version
+  [] Desktop Version
+ -->
+  <!-- background image -->
+  <div>
+    <img
+      src="/assets/images/roof1.jpeg"
+      class="z-0 bg-center object-cover h-100v filter blur-md brightness-[0.65]"
+      alt="background roof image"
+      srcset=""
+    />
+    <!-- <div class="bg-black h-100v opacity-1"></div> -->
+  </div>
+  <!-- navbar -->
+  <nav
+    class="absolute top-0 flex flex-row justify-between w-full h-15 px-4 py-4"
+  >
+    <h3 class="font-medium text-2xl text-white">Benford Roofing</h3>
+    <!-- <img
+      src="assets/icons/MenuIcon.svg"
+      alt="Menu Icon"
+      class="w-8 h-8"
+      @click="clicked"
+    /> -->
+  </nav>
 </template>
