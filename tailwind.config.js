@@ -13,6 +13,7 @@ module.exports = {
         'soft-white': '#FAFAFA',
         'soft-black': '#2D3748',
         'softer-black': '#1A202C',
+        'accent-orange': '#FF9F1C',
         'form-outline': '#41B4E6'
       },
       height: {
