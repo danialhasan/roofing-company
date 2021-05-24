@@ -1,6 +1,7 @@
 <script>
 import { defineComponent } from "vue";
 import ContactButton from "@/components/ContactButton.vue";
+import ContactBanner from "@/components/ContactBanner.vue";
 
 export default defineComponent({
   data() {
@@ -33,9 +34,33 @@ export default defineComponent({
           image: "/assets/images/roof12.jpeg",
         },
       ],
+      workImages: [
+        "/assets/images/roof2.jpeg",
+        "/assets/images/roof6.jpeg",
+        "/assets/images/roof3.jpeg",
+        "/assets/images/roof7.jpeg",
+        "/assets/images/roof5.jpeg",
+      ],
+      pricingCardInfo: [
+        {
+          icon: "/assets/icons/PhoneIcon.svg",
+          title: "Free Estimates",
+          description: "Call/text us at 289-927-688 for a free estimate.",
+        },
+        {
+          icon: "/assets/icons/ChartIcon.svg",
+          title: "24/7 Emergency Service",
+          description: "We’re available 24 hours a day, 7 days a week.",
+        },
+        {
+          icon: "/assets/icons/MoneyIcon.svg",
+          title: "Price goes by square foot",
+          description: "With Benford Roofing, you get competitive prices.",
+        },
+      ],
     };
   },
-  components: { ContactButton },
+  components: { ContactButton, ContactBanner },
   methods: {
     clicked() {
       this.showMobileNav = !this.showMobileNav;
@@ -92,33 +117,16 @@ export default defineComponent({
       Northumberland and surrounding areas.
     </h3>
     <contact-button />
-    <a href="#" class="text-center mt-12 font-xl font-medium text-soft-white"
+    <a href="#" class="text-center mt-12 text-2xl font-medium text-soft-white"
       >View Projects</a
     >
   </div>
   <!-- section 2, services section -->
   <div class="w-full mb-12 bg-soft-white">
     <h2 class="mt-16 text-center font-bold text-4xl">Services</h2>
-    <!-- <div class="w-full h-auto px-2 mx-auto">
-      <div
-        class="w-full h-auto outline-black"
-        v-for="serviceItem in this.serviceImages"
-        :key="serviceItem.id"
-      >
-        <div class="w-[330px] h-[210px] outline-black">
-          <img :src="serviceItem.image" alt="" srcset="" />
-        </div>
-        <div class="w-full h-1/2 outline-black">
-          <h2 class="font-bold text-2xl pl-4 pt-4">{{ serviceItem.title }}</h2>
-          <p class="font-normal text-lg pl-4 pt-4">
-            {{ serviceItem.description }}
-          </p>
-        </div>
-      </div>
-    </div> -->
     <div
       class="flex flex-col w-full h-auto px-2"
-      v-for="item in this.serviceItems"
+      v-for="item in serviceItems"
       :key="item.id"
     >
       <!-- service card -->
@@ -143,4 +151,127 @@ export default defineComponent({
       </div>
     </div>
   </div>
+  <!-- Contact Banner -->
+  <contact-banner />
+  <!-- Our Work section -->
+  <div class="w-full h-auto px-6">
+    <h2 class="text-4xl text-soft-black mt-16 text-center font-bold mb-6">
+      Our Work
+    </h2>
+    <div v-for="image in workImages" :key="image" class="flex flex-col w-auto">
+      <div class="w-full h-[392px] mb-10">
+        <img
+          :src="image"
+          alt="Example of our work"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </div>
+  <!-- Pricing section -->
+  <div class="w-full h-auto">
+    <h2 class="text-4xl text-soft-black mt-16 text-center font-bold mb-12">
+      Pricing
+    </h2>
+    <div
+      v-for="item in pricingCardInfo"
+      :key="item"
+      class="w-[300px] h-auto bg-soft-black text-soft-white px-6 pt-7 rounded-xl mx-auto pb-6 mb-8"
+    >
+      <div class="flex flex-col w-auto space-y-5">
+        <img class="w-6" :src="item.icon" alt="Icon" />
+        <h2 class="font-medium text-2xl">{{ item.title }}</h2>
+        <h2 class="font-normal text-lg">
+          {{ item.description }}
+        </h2>
+      </div>
+    </div>
+  </div>
+  <!-- Contact section -->
+  <div class="w-full h-auto my-16">
+    <h2 class="text-4xl text-soft-black mt-36 text-center font-bold mb-6">
+      Contact Us
+    </h2>
+    <p class="py-2 font-normal text-center text-lg">
+      You can also reach us at 289-927-688 through phone call and SMS
+    </p>
+    <div id="form" class="mt-8 px-8 w-full h-auto">
+      <form
+        name="Contact Form — Benford Roofing"
+        method="POST"
+        netlify
+        class="flex flex-col w-full h-auto"
+      >
+        <label class="text-2xl pb-2 font-medium" for="name">Name</label>
+        <input
+          class="bg-gray-200 rounded-lg py-2"
+          type="text"
+          name="name"
+          id=""
+        />
+        <label class="text-2xl mt-6 pb-2 font-medium" for="email">Email</label>
+        <input
+          class="bg-gray-200 rounded-lg py-2"
+          type="email"
+          name="email"
+          id=""
+        />
+        <label class="text-2xl mt-6 pb-2 font-medium" for="message"
+          >Message</label
+        >
+        <textarea
+          type="text"
+          name="message"
+          id=""
+          class="min-h-[160px] bg-gray-200 rounded-lg"
+        />
+        <button
+          type="submit"
+          class="bg-accent-orange mt-6 px-12 py-3 rounded-lg"
+        >
+          <a href="#" class="text-2xl font-medium text-soft-black">Send</a>
+        </button>
+      </form>
+    </div>
+  </div>
+  <!-- Footer section -->
+  <footer
+    class="text-center w-full h-auto text-soft-white bg-softer-black mt-6 pt-12 px-6 flex flex-col space-y-20"
+  >
+    <div class="flex flex-col">
+      <h2 class="text-2xl font-bold">Benford Roofing</h2>
+      <h2 class="text-xl font-medium mt-8">
+        We're a roofing company based in Northumberland and surrounding areas.
+      </h2>
+      <p class="text-xl font-normal mt-8">
+        We offer skilled roofing services to houses and buildings in Toronto.
+      </p>
+    </div>
+    <div class="font-bold text-center">
+      <ul class="flex flex-col space-y-8 text-lg">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Our Work</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="mb-6 text-center flex flex-col space-y-5 px-6">
+      <h2 class="font-bold text-2xl">Contact us to get started</h2>
+      <p class="text-lg font-regular">
+        Schedule a call or send us an email to get a fast, accurate quote
+        regarding your roofing needs.
+      </p>
+      <button class="bg-accent-orange px-12 py-3 rounded-lg">
+        <a href="#" class="text-xl font-medium text-soft-black"
+          >Get a quote now</a
+        >
+      </button>
+    </div>
+    <p class="text-lg text-center font-regular text-white">
+      Designed and developed by
+      <a class="underline" target="_blank" href="https://hasandev.ca"
+        >DHasanDev.ca</a
+      >
+    </p>
+  </footer>
 </template>
