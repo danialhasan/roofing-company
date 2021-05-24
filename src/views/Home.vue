@@ -193,13 +193,15 @@ export default defineComponent({
       Contact Us
     </h2>
     <p class="py-2 font-normal text-center text-lg">
-      You can also reach us at 289-927-688 through phone call and SMS
+      You can also reach us at
+      <a class="font-bold underline" href="tel:289-927-688">289-927-688</a>
+      through phone call and SMS
     </p>
     <div id="form" class="mt-8 px-8 w-full h-auto">
       <form
         name="Contact Form — Benford Roofing"
         method="POST"
-        netlify
+        data-netlify="true"
         class="flex flex-col w-full h-auto"
       >
         <label class="text-2xl pb-2 font-medium" for="name">Name</label>
