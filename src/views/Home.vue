@@ -70,8 +70,10 @@ export default defineComponent({
 </script>
 <template>
   <!-- 
-  [] Mobile Version
+  [x] Mobile Version
   [] Desktop Version
+    [] lg version
+    [] xl version
  -->
   <!-- background image -->
   <div class="bg-soft-black">
@@ -83,8 +85,9 @@ export default defineComponent({
     />
   </div>
   <!-- navbar -->
+  <!-- note: since we're positioning it absolute, we have to center it with the negative left and negative margin. -->
   <nav
-    class="absolute top-0 flex flex-row justify-between w-full h-15 px-4 py-4"
+    class="absolute top-0 flex flex-row justify-between w-full lg:max-w-screen-xl lg:left-1/2 lg:ml-lgNav xl:ml-xlNav px-4 py-4 lg:h-20 lg:items-center lg:justify-between lg:px-8 lg:mt-4"
   >
     <h3 class="font-medium text-2xl text-white">Benford Roofing</h3>
     <!-- NOTE: ALL SOURCES/STATIC FILES (IMAGES AND STUFF) NEED TO BE PREFIXED WITH  '/', 
@@ -92,9 +95,21 @@ export default defineComponent({
     <img
       src="/assets/icons/MenuIcon.svg"
       alt="Menu Icon"
-      class="w-8 h-8 z-50"
+      class="lg:hidden w-8 h-8 z-50"
       @click="clicked"
     />
+    <!-- desktop navbar -->
+    <div class="hidden lg:block text-soft-white w-[400px] h-full">
+      <ul class="flex flex-row justify-between items-center h-full">
+        <li><a href="">Services</a></li>
+        <li><a href="">Our Work</a></li>
+        <li><a href="">Pricing</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </div>
+    <div class="hidden lg:block">
+      <contact-button />
+    </div>
   </nav>
   <!-- mobile navbar -->
   <div
@@ -108,29 +123,40 @@ export default defineComponent({
       <li>Contact</li>
     </ul>
   </div>
-  <div class="flex flex-col absolute top-0 mt-56 h-auto px-8 mx-auto">
-    <h1 class="z-20 font-bold text-center text-4xl text-soft-white">
+
+  <div
+    class="flex flex-col absolute top-0 mt-56 lg:mt-52 text-center lg:text-left h-auto px-8 mx-auto"
+  >
+    <h1
+      class="z-20 font-bold text-4xl lg:text-6xl lg:mr-20 lg:leading-[78px] text-soft-white"
+    >
       We’re a roofing company based in Northumberland.
     </h1>
-    <h3 class="text-xl mt-12 mb-6 text-center font-medium text-soft-white">
+    <h3
+      class="text-xl lg:text-2xl lg:mr-36 mt-12 mb-6 font-medium text-soft-white"
+    >
       We offer skilled roofing services to houses and buildings in
       Northumberland and surrounding areas.
     </h3>
-    <contact-button />
-    <a href="#" class="text-center mt-12 text-2xl font-medium text-soft-white"
-      >View Projects</a
-    >
+    <div class="flex flex-col lg:flex-row lg:items-center lg:h-14 lg:mt-8">
+      <contact-button />
+      <a
+        href="#"
+        class="mt-12 lg:mt-0 lg:ml-[75px] text-2xl font-medium text-soft-white"
+        >View Projects</a
+      >
+    </div>
   </div>
   <!-- section 2, services section -->
   <div class="w-full mb-12 bg-soft-white">
-    <h2 class="mt-16 text-center font-bold text-4xl">Services</h2>
+    <h2 class="mt-16 text-center font-bold text-4xl lg:mb-8">Services</h2>
     <div
-      class="flex flex-col w-full h-auto px-2"
+      class="flex flex-col lg:flex-row w-full h-auto px-2"
       v-for="item in serviceItems"
       :key="item.id"
     >
       <!-- service card -->
-      <div class="w-auto my-4 border-2 border-soft-black h-auto">
+      <div class="w-auto lg:w-[360px] my-4 border-2 border-soft-black h-auto">
         <div class="w-full h-1/2 mx-auto">
           <img
             :src="item.image"
@@ -238,7 +264,7 @@ export default defineComponent({
   </div>
   <!-- Footer section -->
   <footer
-    class="text-center w-full h-auto text-soft-white bg-softer-black mt-6 pt-12 px-6 flex flex-col space-y-20"
+    class="text-center w-full h-auto text-soft-white bg-softer-black mt-6 pt-12 px-6 flex flex-col space-y-20 pb-12"
   >
     <div class="flex flex-col">
       <h2 class="text-2xl font-bold">Benford Roofing</h2>

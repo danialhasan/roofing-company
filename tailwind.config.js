@@ -19,6 +19,10 @@ module.exports = {
       height: {
         "100v": "100vh",
       },
+      margin: {
+        "xlNav": "-640px",
+        "lgNav": "-512px"
+      }
     },
   },
   plugins: [
