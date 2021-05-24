@@ -197,7 +197,7 @@ export default defineComponent({
       <a class="font-bold underline" href="tel:289-927-688">289-927-688</a>
       through phone call and SMS
     </p>
-    <div id="form" class="mt-8 px-8 w-full h-auto">
+    <div id="contactForm" class="mt-8 px-8 w-full h-auto">
       <form
         name="Contact Form — Benford Roofing"
         method="POST"
@@ -229,9 +229,9 @@ export default defineComponent({
         />
         <button
           type="submit"
-          class="bg-accent-orange mt-6 px-12 py-3 rounded-lg"
+          class="bg-accent-orange mt-6 px-12 py-3 rounded-lg text-2xl font-medium text-soft-black"
         >
-          <a href="#" class="text-2xl font-medium text-soft-black">Send</a>
+          Send
         </button>
       </form>
     </div>
@@ -264,7 +264,7 @@ export default defineComponent({
         regarding your roofing needs.
       </p>
       <button class="bg-accent-orange px-12 py-3 rounded-lg">
-        <a href="#" class="text-xl font-medium text-soft-black"
+        <a href="#contactForm" class="text-xl font-medium text-soft-black"
           >Get a quote now</a
         >
       </button>

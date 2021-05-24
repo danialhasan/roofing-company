@@ -10,7 +10,7 @@
       </p>
       <div class="w-full h-auto flex justify-center mt-12">
         <button class="bg-accent-orange px-16 py-6 rounded-lg">
-          <a href="#" class="text-2xl font-medium text-soft-black"
+          <a href="#contactForm" class="text-2xl font-medium text-soft-black"
             >Contact Us</a
           >
         </button>
