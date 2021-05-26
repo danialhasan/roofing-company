@@ -259,8 +259,11 @@ export default defineComponent({
         name="contact"
         method="POST"
         data-netlify="true"
+        netlify-honeypot="bot-field"
         class="flex flex-col w-full h-auto"
       >
+        <input type="hidden" name="form-name" value="contact" />
+
         <label class="text-2xl pb-2 font-medium" for="name">Name</label>
         <input
           class="bg-gray-200 rounded-lg py-2 lg:py-3"
