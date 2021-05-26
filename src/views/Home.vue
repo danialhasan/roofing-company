@@ -108,10 +108,10 @@ export default defineComponent({
     <!-- desktop navbar -->
     <div class="hidden lg:block text-soft-white w-[400px] h-full">
       <ul class="flex flex-row justify-between items-center h-full">
-        <li><a href="">Services</a></li>
-        <li><a href="">Our Work</a></li>
-        <li><a href="">Pricing</a></li>
-        <li><a href="">Contact</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#our_work">Our Work</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
     <div class="hidden lg:block">
@@ -156,7 +156,7 @@ export default defineComponent({
     </div>
   </div>
   <!-- section 2, services section -->
-  <div class="w-full mb-12 bg-soft-white">
+  <div id="services" class="w-full mb-12 bg-soft-white">
     <h2 class="mt-16 text-center font-bold text-4xl lg:mb-8">Services</h2>
     <div class="xl:max-w-[1190px] xl:mx-auto">
       <div
@@ -194,7 +194,7 @@ export default defineComponent({
   <!-- Contact Banner -->
   <contact-banner />
   <!-- Our Work section -->
-  <div class="w-full h-auto px-6 xl:p-0">
+  <div id="our_work" class="w-full h-auto px-6 xl:p-0">
     <h2
       class="text-4xl text-soft-black mt-16 text-center font-bold mb-6 lg:mb-12"
     >
@@ -219,7 +219,7 @@ export default defineComponent({
     </div>
   </div>
   <!-- Pricing section -->
-  <div class="w-full h-auto">
+  <div id="pricing" class="w-full h-auto">
     <h2 class="text-4xl text-soft-black mt-16 text-center font-bold mb-12">
       Pricing
     </h2>
@@ -240,7 +240,7 @@ export default defineComponent({
     </div>
   </div>
   <!-- Contact section -->
-  <div class="w-full h-auto my-16">
+  <div id="contact" class="w-full h-auto my-16">
     <h2
       class="text-4xl lg:text-6xl text-soft-black mt-36 text-center font-bold mb-6"
     >
@@ -256,7 +256,7 @@ export default defineComponent({
       class="mt-8 px-8 w-full h-auto lg:w-[455px] lg:mx-auto"
     >
       <form
-        name="Contact Form — Benford Roofing"
+        name="contact"
         method="POST"
         data-netlify="true"
         class="flex flex-col w-full h-auto"
@@ -296,7 +296,7 @@ export default defineComponent({
     </div>
   </div>
   <!-- Footer section -->
-  <footer class="text-soft-white bg-softer-black">
+  <footer id="footer" class="text-soft-white bg-softer-black">
     <div
       class="flex flex-col lg:space-y-4 lg:max-w-screen-xl lg:mx-auto lg:flex-row lg:flex-wrap lg:justify-between text-center w-full h-auto mt-6 pt-12 px-6 space-y-20 pb-12"
     >
