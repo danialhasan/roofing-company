@@ -18,27 +18,22 @@
 
 <body class="smooth-scroll">
   <div id="app">
-    <!--
+  </div>
+  <!--
     The purpose of the following hidden form is to allow Netlify
     to parse a skeleton form and use it for form submission until the 
     real Javascript-rendered form is complete. More info here:
     https://docs.netlify.com/forms/setup/?_ga=2.176717740.809656231.1622062490-96409780.1611268371#work-with-javascript-rendered-forms
     -->
-    <form name="contact" method="POST" data-netlify="true" class="hidden">
-      <label for="name">Name</label>
-      <input type="text" name="name" id="" />
-      <label for="email">Email</label>
-      <input type="email" name="email" id="" />
-      <label for="message">Message</label>
-      <textarea type="text" name="message" id="">
-      <div class="lg:w-full h-auto">
+  <form name="contact" method="POST" data-netlify="true" class="hidden">
+    <input type="text" name="name" id="" />
+    <input type="email" name="email" id="" />
+    <textarea type="text" name="message" id="">
           <button
             type="submit">
             Send
           </button>
-        </div>
-      </form>    
-  </div>
+      </form> 
   <script type="module" src="/src/main.js"></script>
 </body>
 
