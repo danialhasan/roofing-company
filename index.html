@@ -23,15 +23,14 @@
     real Javascript-rendered form is complete. More info here:
     https://docs.netlify.com/forms/setup/?_ga=2.176717740.809656231.1622062490-96409780.1611268371#work-with-javascript-rendered-forms
     -->
-  <!-- <form name="contact" method="POST" data-netlify="true" class="hidden">
-    <input type="text" name="name" id="" />
-    <input type="email" name="email" id="" />
-    <textarea type="text" name="message" id="">
-          <button
-            type="submit">
-            Send
-          </button>
-  </form>  -->
+  <form name="contact" method="POST" data-netlify="true" class="hidden">
+    <input type="text" name="name" id="" class="hidden" />
+    <input type="email" name="email" id="" class="hidden" />
+    <textarea type="text" name="message" id="" class="hidden"></textarea>
+    <button type="submit" class="hidden">
+      Send
+    </button>
+  </form>
   <div id="app">
   </div>
   <script type="module" src="/src/main.js"></script>

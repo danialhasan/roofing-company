@@ -283,7 +283,7 @@ export default defineComponent({
           name="message"
           id=""
           class="min-h-[160px] bg-gray-200 rounded-lg"
-        />
+        ></textarea>
         <div class="lg:w-full h-auto">
           <button
             type="submit"
