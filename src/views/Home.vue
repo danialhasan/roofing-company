@@ -25,7 +25,7 @@ export default defineComponent({
           title: "Insulation removal and installation",
           description:
             "We remove and install insulation, so your building stays thermally efficient.",
-          image: "/assets/images/roof11.jpeg",
+          image: "/assets/images/roofingselection.jpeg",
         },
         {
           id: 3,
@@ -47,6 +47,7 @@ export default defineComponent({
         "/assets/images/roof7.jpeg",
         "/assets/images/roof4.jpeg",
         "/assets/images/roof5.jpeg",
+        "/assets/images/roof15.jpeg",
       ],
       pricingCardInfo: [
         {
