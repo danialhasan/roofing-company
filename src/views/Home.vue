@@ -321,10 +321,10 @@ export default defineComponent({
         <ul
           class="flex flex-col lg:flex-row lg:flex-nowrap lg:mt-8 lg:space-x-5 space-y-8 lg:space-y-0 text-lg"
         >
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Our Work</a></li>
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#our_work">Our Work</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       <div
