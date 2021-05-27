@@ -73,6 +73,10 @@ export default defineComponent({
     clicked() {
       this.showMobileNav = !this.showMobileNav;
     },
+    mobileNavScrollTo(section) {
+      this.clicked();
+      window.location.href = `/#${section}`;
+    },
   },
 });
 </script>
@@ -125,10 +129,10 @@ export default defineComponent({
     class="fixed flex flex-col justify-center items-center top-0 z-40 w-full h-100v backdrop-filter backdrop-blur-sm backdrop-brightness-[0.25]"
   >
     <ul class="text-soft-white text-3xl space-y-10 text-center font-bold">
-      <li>Services</li>
-      <li>Our Work</li>
-      <li>Pricing</li>
-      <li>Contact</li>
+      <li @click="mobileNavScrollTo('services')">Services</li>
+      <li @click="mobileNavScrollTo('our_work')">Our Work</li>
+      <li @click="mobileNavScrollTo('pricing')">Pricing</li>
+      <li @click="mobileNavScrollTo('contact')">Contact</li>
     </ul>
   </div>
   <div id="wrapper" class="absolute top-0 mt-56 lg:mt-52 xl:w-full">
