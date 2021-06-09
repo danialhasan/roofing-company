@@ -77,6 +77,9 @@ export default defineComponent({
       this.clicked();
       window.location.href = `/#${section}`;
     },
+    desktopNavScrollTo(section) {
+      window.location.href = `/#${section}`;
+    },
   },
 });
 </script>
@@ -91,7 +94,17 @@ export default defineComponent({
   <div class="bg-soft-black">
     <img
       src="/assets/images/roof1.jpeg"
-      class="z-0 bg-center object-cover h-100v lg:h-[710px] xl:w-full filter blur-md brightness-[0.65]"
+      class="
+        z-0
+        bg-center
+        object-cover
+        h-100v
+        lg:h-[710px]
+        xl:w-full
+        filter
+        blur-md
+        brightness-[0.65]
+      "
       alt="background roof image"
       srcset=""
     />
@@ -99,7 +112,24 @@ export default defineComponent({
   <!-- navbar -->
   <!-- note: since we're positioning it absolute, we have to center it with the negative left and negative margin. -->
   <nav
-    class="absolute top-0 flex flex-row justify-between w-full lg:max-w-screen-xl lg:left-1/2 lg:ml-lgNav xl:ml-xlNav px-4 py-4 lg:h-20 lg:items-center lg:justify-between lg:px-8 lg:mt-4"
+    class="
+      absolute
+      top-0
+      flex flex-row
+      justify-between
+      w-full
+      lg:max-w-screen-xl
+      lg:left-1/2
+      lg:ml-lgNav
+      xl:ml-xlNav
+      px-4
+      py-4
+      lg:h-20
+      lg:items-center
+      lg:justify-between
+      lg:px-8
+      lg:mt-4
+    "
   >
     <h3 class="font-medium text-2xl text-white">Benford Roofing</h3>
     <!-- NOTE: ALL SOURCES/STATIC FILES (IMAGES AND STUFF) NEED TO BE PREFIXED WITH  '/', 
@@ -113,10 +143,10 @@ export default defineComponent({
     <!-- desktop navbar -->
     <div class="hidden lg:block text-soft-white w-[400px] h-full">
       <ul class="flex flex-row justify-between items-center h-full">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#our_work">Our Work</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li @click="desktopNavScrollTo('services')">Services</li>
+        <li @click="desktopNavScrollTo('our_work')">Our Work</li>
+        <li @click="desktopNavScrollTo('pricing')">Pricing</li>
+        <li @click="desktopNavScrollTo('contact')">Contact</li>
       </ul>
     </div>
     <div class="hidden lg:block">
@@ -126,7 +156,17 @@ export default defineComponent({
   <!-- mobile navbar -->
   <div
     v-if="this.showMobileNav"
-    class="fixed flex flex-col justify-center items-center top-0 z-40 w-full h-100v backdrop-filter backdrop-blur-sm backdrop-brightness-[0.25]"
+    class="
+      fixed
+      flex flex-col
+      justify-center
+      items-center
+      top-0
+      z-40
+      w-full
+      h-100v
+      backdrop-filter backdrop-blur-sm backdrop-brightness-[0.25]
+    "
   >
     <ul class="text-soft-white text-3xl space-y-10 text-center font-bold">
       <li @click="mobileNavScrollTo('services')">Services</li>
@@ -137,15 +177,39 @@ export default defineComponent({
   </div>
   <div id="wrapper" class="absolute top-0 mt-56 lg:mt-52 xl:w-full">
     <div
-      class="xl:max-w-screen-xl flex flex-col text-center lg:text-left h-auto px-8 mx-auto"
+      class="
+        xl:max-w-screen-xl
+        flex flex-col
+        text-center
+        lg:text-left
+        h-auto
+        px-8
+        mx-auto
+      "
     >
       <h1
-        class="z-20 font-bold text-4xl lg:text-6xl lg:mr-20 lg:leading-[78px] text-soft-white"
+        class="
+          z-20
+          font-bold
+          text-4xl
+          lg:text-6xl
+          lg:mr-20
+          lg:leading-[78px]
+          text-soft-white
+        "
       >
         We’re a roofing company based in Northumberland.
       </h1>
       <h3
-        class="text-xl lg:text-2xl lg:mr-36 mt-12 mb-6 font-medium text-soft-white"
+        class="
+          text-xl
+          lg:text-2xl
+          lg:mr-36
+          mt-12
+          mb-6
+          font-medium
+          text-soft-white
+        "
       >
         We offer skilled roofing services to houses and buildings in
         Northumberland and surrounding areas.
@@ -153,8 +217,15 @@ export default defineComponent({
       <div class="flex flex-col lg:flex-row lg:items-center lg:h-14 lg:mt-8">
         <contact-button />
         <a
-          href="#"
-          class="mt-12 lg:mt-0 lg:ml-[75px] text-2xl font-medium text-soft-white"
+          href="#our_work"
+          class="
+            mt-12
+            lg:mt-0
+            lg:ml-[75px]
+            text-2xl
+            font-medium
+            text-soft-white
+          "
           >View Projects</a
         >
       </div>
@@ -165,13 +236,29 @@ export default defineComponent({
     <h2 class="mt-16 text-center font-bold text-4xl lg:mb-8">Services</h2>
     <div class="xl:max-w-[1190px] xl:mx-auto">
       <div
-        class="flex flex-col lg:flex-row lg:flex-wrap lg:justify-evenly xl:justify-start w-full h-auto px-2"
+        class="
+          flex flex-col
+          lg:flex-row lg:flex-wrap
+          lg:justify-evenly
+          xl:justify-start
+          w-full
+          h-auto
+          px-2
+        "
       >
         <!-- service card -->
         <div
           v-for="item in serviceItems"
           :key="item.id"
-          class="w-auto lg:w-[360px] my-4 border-2 border-soft-black h-auto lg:flex lg:flex-col xl:mr-6"
+          class="
+            w-auto
+            lg:w-[360px]
+            my-4
+            border-2 border-soft-black
+            h-auto
+            lg:flex lg:flex-col
+            xl:mr-6
+          "
         >
           <div class="w-full h-1/2 lg:h-[212px] mx-auto lg:flex-grow">
             <img
@@ -207,12 +294,26 @@ export default defineComponent({
     </h2>
     <div class="xl:w-full">
       <div
-        class="flex flex-col lg:flex-row lg:flex-wrap justify-evenly xl:justify-between w-auto xl:max-w-screen-xl xl:mx-auto"
+        class="
+          flex flex-col
+          lg:flex-row lg:flex-wrap
+          justify-evenly
+          xl:justify-between
+          w-auto
+          xl:max-w-screen-xl
+          xl:mx-auto
+        "
       >
         <div
           v-for="image in workImages"
           :key="image"
-          class="w-full h-[392px] lg:border-2 lg:border-soft-black mb-10 lg:w-[360px]"
+          class="
+            w-full
+            h-[392px]
+            lg:border-2 lg:border-soft-black
+            mb-10
+            lg:w-[360px]
+          "
         >
           <img
             :src="image"
@@ -232,7 +333,18 @@ export default defineComponent({
       <div
         v-for="item in pricingCardInfo"
         :key="item"
-        class="w-[300px] h-auto bg-soft-black text-soft-white px-6 pt-7 rounded-xl mx-auto pb-6 mb-8"
+        class="
+          w-[300px]
+          h-auto
+          bg-soft-black
+          text-soft-white
+          px-6
+          pt-7
+          rounded-xl
+          mx-auto
+          pb-6
+          mb-8
+        "
       >
         <div class="flex flex-col w-auto space-y-5">
           <img class="w-6" :src="item.icon" alt="Icon" />
@@ -247,7 +359,15 @@ export default defineComponent({
   <!-- Contact section -->
   <div id="contact" class="w-full h-auto my-16">
     <h2
-      class="text-4xl lg:text-6xl text-soft-black mt-36 text-center font-bold mb-6"
+      class="
+        text-4xl
+        lg:text-6xl
+        text-soft-black
+        mt-36
+        text-center
+        font-bold
+        mb-6
+      "
     >
       Contact Us
     </h2>
@@ -295,7 +415,17 @@ export default defineComponent({
         <div class="lg:w-full h-auto">
           <button
             type="submit"
-            class="bg-accent-orange mt-6 px-12 py-3 rounded-lg text-2xl font-medium text-soft-black float-right"
+            class="
+              bg-accent-orange
+              mt-6
+              px-12
+              py-3
+              rounded-lg
+              text-2xl
+              font-medium
+              text-soft-black
+              float-right
+            "
           >
             Send
           </button>
@@ -306,7 +436,22 @@ export default defineComponent({
   <!-- Footer section -->
   <footer id="footer" class="text-soft-white bg-softer-black">
     <div
-      class="flex flex-col lg:space-y-4 lg:max-w-screen-xl lg:mx-auto lg:flex-row lg:flex-wrap lg:justify-between text-center w-full h-auto mt-6 pt-12 px-6 space-y-20 pb-12"
+      class="
+        flex flex-col
+        lg:space-y-4
+        lg:max-w-screen-xl
+        lg:mx-auto
+        lg:flex-row lg:flex-wrap
+        lg:justify-between
+        text-center
+        w-full
+        h-auto
+        mt-6
+        pt-12
+        px-6
+        space-y-20
+        pb-12
+      "
     >
       <div class="flex flex-col lg:max-w-sm lg:order-first lg:text-left">
         <h2 class="text-2xl font-bold">Benford Roofing</h2>
@@ -314,12 +459,21 @@ export default defineComponent({
           We're a roofing company based in Northumberland and surrounding areas.
         </h2>
         <p class="text-xl font-normal mt-8">
-          We offer skilled roofing services to houses and buildings in Toronto.
+          We offer skilled roofing services to houses and buildings in
+          Northumberland.
         </p>
       </div>
       <div class="font-bold text-center lg:order-3 xl:order-2">
         <ul
-          class="flex flex-col lg:flex-row lg:flex-nowrap lg:mt-8 lg:space-x-5 space-y-8 lg:space-y-0 text-lg"
+          class="
+            flex flex-col
+            lg:flex-row lg:flex-nowrap
+            lg:mt-8
+            lg:space-x-5
+            space-y-8
+            lg:space-y-0
+            text-lg
+          "
         >
           <li><a href="#services">Services</a></li>
           <li><a href="#our_work">Our Work</a></li>
@@ -328,7 +482,20 @@ export default defineComponent({
         </ul>
       </div>
       <div
-        class="mb-6 text-center flex flex-col space-y-5 px-6 xl:px-0 lg:max-w-sm lg:order-2 xl:order-3 lg:m-0 lg:mt-0 lg:p-0"
+        class="
+          mb-6
+          text-center
+          flex flex-col
+          space-y-5
+          px-6
+          xl:px-0
+          lg:max-w-sm
+          lg:order-2
+          xl:order-3
+          lg:m-0
+          lg:mt-0
+          lg:p-0
+        "
       >
         <h2 class="font-bold text-2xl">Contact us to get started</h2>
         <p class="text-lg font-regular">
@@ -342,7 +509,17 @@ export default defineComponent({
         </button>
       </div>
       <p
-        class="text-lg lg:pt-8 text-center font-regular text-white lg:order-last xl:relative xl:left-1/2 xl:ml-[-177px]"
+        class="
+          text-lg
+          lg:pt-8
+          text-center
+          font-regular
+          text-white
+          lg:order-last
+          xl:relative
+          xl:left-1/2
+          xl:ml-[-177px]
+        "
       >
         Designed and developed by
         <a class="underline" target="_blank" href="https://hasandev.ca"
