@@ -523,7 +523,7 @@ export default defineComponent({
       >
         Designed and developed by
         <a class="underline" target="_blank" href="https://hasandev.ca"
-          >DHasanDev.ca</a
+          >HasanDev.ca</a
         >
       </p>
     </div>
