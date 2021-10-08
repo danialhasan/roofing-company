@@ -8,7 +8,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "netlify-cli": "^3.30.3",
+    "netlify-cli": "^6.10.3",
     "prerender-spa-plugin": "^3.4.0",
     "vue": "^3.0.11",
     "vue-router": "^4.0.8"
